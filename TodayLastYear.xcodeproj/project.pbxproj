@@ -75,10 +75,10 @@
 		66AE5F7D2F01E27200D79FD7 = {
 			isa = PBXGroup;
 			children = (
-				66AE5F882F01E27200D79FD7 /* TodayLastYear */,
 				66AE5F962F01E27400D79FD7 /* TodayLastYearTests */,
 				66AE5FA02F01E27400D79FD7 /* TodayLastYearUITests */,
 				66AE5F872F01E27200D79FD7 /* Products */,
+				66AE5F882F01E27200D79FD7 /* TodayLastYear */,
 			);
 			sourceTree = "<group>";
 		};
