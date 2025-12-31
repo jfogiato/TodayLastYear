@@ -35,27 +35,37 @@ class NotificationManager: ObservableObject {
         }
     }
     
-    func scheduleDailyNotification() async {
+    func scheduleDailyNotification(at time: Date? = nil) async {
         // Remove any existing notifications first
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
-        // Create the notification content (will be updated dynamically)
+        // Get the time components
+        let calendar = Calendar.current
+        let timeDate = time ?? calendar.date(from: DateComponents(hour: 9, minute: 0)) ?? Date()
+        let hour = calendar.component(.hour, from: timeDate)
+        let minute = calendar.component(.minute, from: timeDate)
+        
+        // Save the time preference
+        UserDefaults.standard.set(hour, forKey: "reminderHour")
+        UserDefaults.standard.set(minute, forKey: "reminderMinute")
+        
+        // Create the notification content
         let content = UNMutableNotificationContent()
         content.title = "One Year Ago"
         content.body = await generateNotificationBody()
         content.sound = .default
         
-        // Schedule for 9am daily
+        // Schedule for the chosen time daily
         var dateComponents = DateComponents()
-        dateComponents.hour = 9
-        dateComponents.minute = 0
+        dateComponents.hour = hour
+        dateComponents.minute = minute
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: "daily-reminder", content: content, trigger: trigger)
         
         do {
             try await UNUserNotificationCenter.current().add(request)
-            print("Daily notification scheduled for 9am")
+            print("Daily notification scheduled for \(hour):\(String(format: "%02d", minute))")
         } catch {
             print("Failed to schedule notification: \(error)")
         }

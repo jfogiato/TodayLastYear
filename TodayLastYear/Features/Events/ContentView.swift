@@ -25,6 +25,14 @@ struct ContentView: View {
                 }
             }
             .navigationTitle(calendarManager.oneYearAgoDate.formatted(.dateTime.month(.wide).day().year()))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                            .foregroundStyle(Theme.colors.textSecondary)
+                    }
+                }
+            }
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Theme.colors.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
