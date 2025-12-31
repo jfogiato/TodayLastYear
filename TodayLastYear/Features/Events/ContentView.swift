@@ -1,8 +1,10 @@
 import SwiftUI
 import EventKit
+import WidgetKit
 
 struct ContentView: View {
     @StateObject private var calendarManager = CalendarManager()
+    @StateObject private var notificationManager = NotificationManager.shared
     
     var body: some View {
         NavigationStack {
@@ -30,6 +32,14 @@ struct ContentView: View {
         .background(Theme.colors.background)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Theme.colors.background.ignoresSafeArea())
+        .onAppear {
+            Task {
+                if notificationManager.isAuthorized {
+                    await notificationManager.scheduleDailyNotification()
+                }
+            }
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
     
     // MARK: - Subviews
@@ -48,9 +58,10 @@ struct ContentView: View {
             Button {
                 Task {
                     await calendarManager.requestAccess()
+                    _ = await notificationManager.requestAuthorization()
                 }
             } label: {
-                Text("Allow Calendar Access")
+                Text("Get Started")
                     .font(Theme.typography.headlineFont)
                     .foregroundStyle(.white)
                     .padding(.horizontal, Theme.layout.paddingLarge)

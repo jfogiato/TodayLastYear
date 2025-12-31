@@ -76,6 +76,13 @@
 			);
 			target = 6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */;
 		};
+		6647DCD52F057C09009FCAE6 /* Exceptions for "TodayLastYear" folder in "TodayLastYear" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 66AE5F852F01E27200D79FD7 /* TodayLastYear */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -90,6 +97,7 @@
 		66AE5F882F01E27200D79FD7 /* TodayLastYear */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				6647DCD52F057C09009FCAE6 /* Exceptions for "TodayLastYear" folder in "TodayLastYear" target */,
 				6647DCCE2F057205009FCAE6 /* Exceptions for "TodayLastYear" folder in "TLYWidgetExtension" target */,
 			);
 			path = TodayLastYear;
@@ -598,6 +606,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayLastYear/Info.plist;
 				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "This app allows you to see what you did one year ago today.";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app shows you what you did on this day one year ago.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -644,6 +653,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodayLastYear/Info.plist;
 				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "This app allows you to see what you did one year ago today.";
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "This app shows you what you did on this day one year ago.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
