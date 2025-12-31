@@ -6,7 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6647DCBA2F0571D4009FCAE6 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647DCB92F0571D4009FCAE6 /* WidgetKit.framework */; };
+		6647DCBC2F0571D4009FCAE6 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647DCBB2F0571D4009FCAE6 /* SwiftUI.framework */; };
+		6647DCC72F0571D5009FCAE6 /* TLYWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6647DCB72F0571D4009FCAE6 /* TLYWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		6647DCC52F0571D5009FCAE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AE5F7E2F01E27200D79FD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6647DCB62F0571D4009FCAE6;
+			remoteInfo = TLYWidgetExtension;
+		};
 		66AE5F942F01E27400D79FD7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 66AE5F7E2F01E27200D79FD7 /* Project object */;
@@ -23,15 +36,62 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6647DCCC2F0571D5009FCAE6 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6647DCC72F0571D5009FCAE6 /* TLYWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6647DCB72F0571D4009FCAE6 /* TLYWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TLYWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6647DCB92F0571D4009FCAE6 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6647DCBB2F0571D4009FCAE6 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6647DCD02F057252009FCAE6 /* TLYWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TLYWidgetExtension.entitlements; sourceTree = "<group>"; };
 		66AE5F862F01E27200D79FD7 /* TodayLastYear.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayLastYear.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AE5F932F01E27400D79FD7 /* TodayLastYearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayLastYearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AE5F9D2F01E27400D79FD7 /* TodayLastYearUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodayLastYearUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6647DCC82F0571D5009FCAE6 /* Exceptions for "TLYWidget" folder in "TLYWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */;
+		};
+		6647DCCE2F057205009FCAE6 /* Exceptions for "TodayLastYear" folder in "TLYWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Design/Theme.swift,
+				Features/Events/CalendarManager.swift,
+			);
+			target = 6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		6647DCBD2F0571D4009FCAE6 /* TLYWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6647DCC82F0571D5009FCAE6 /* Exceptions for "TLYWidget" folder in "TLYWidgetExtension" target */,
+			);
+			path = TLYWidget;
+			sourceTree = "<group>";
+		};
 		66AE5F882F01E27200D79FD7 /* TodayLastYear */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6647DCCE2F057205009FCAE6 /* Exceptions for "TodayLastYear" folder in "TLYWidgetExtension" target */,
+			);
 			path = TodayLastYear;
 			sourceTree = "<group>";
 		};
@@ -48,6 +108,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6647DCB42F0571D4009FCAE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6647DCBC2F0571D4009FCAE6 /* SwiftUI.framework in Frameworks */,
+				6647DCBA2F0571D4009FCAE6 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66AE5F832F01E27200D79FD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,11 +141,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6647DCB82F0571D4009FCAE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6647DCB92F0571D4009FCAE6 /* WidgetKit.framework */,
+				6647DCBB2F0571D4009FCAE6 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66AE5F7D2F01E27200D79FD7 = {
 			isa = PBXGroup;
 			children = (
+				6647DCD02F057252009FCAE6 /* TLYWidgetExtension.entitlements */,
 				66AE5F962F01E27400D79FD7 /* TodayLastYearTests */,
 				66AE5FA02F01E27400D79FD7 /* TodayLastYearUITests */,
+				6647DCBD2F0571D4009FCAE6 /* TLYWidget */,
+				6647DCB82F0571D4009FCAE6 /* Frameworks */,
 				66AE5F872F01E27200D79FD7 /* Products */,
 				66AE5F882F01E27200D79FD7 /* TodayLastYear */,
 			);
@@ -88,6 +169,7 @@
 				66AE5F862F01E27200D79FD7 /* TodayLastYear.app */,
 				66AE5F932F01E27400D79FD7 /* TodayLastYearTests.xctest */,
 				66AE5F9D2F01E27400D79FD7 /* TodayLastYearUITests.xctest */,
+				6647DCB72F0571D4009FCAE6 /* TLYWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +177,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6647DCC92F0571D5009FCAE6 /* Build configuration list for PBXNativeTarget "TLYWidgetExtension" */;
+			buildPhases = (
+				6647DCB32F0571D4009FCAE6 /* Sources */,
+				6647DCB42F0571D4009FCAE6 /* Frameworks */,
+				6647DCB52F0571D4009FCAE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6647DCBD2F0571D4009FCAE6 /* TLYWidget */,
+			);
+			name = TLYWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = TLYWidgetExtension;
+			productReference = 6647DCB72F0571D4009FCAE6 /* TLYWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		66AE5F852F01E27200D79FD7 /* TodayLastYear */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66AE5FA72F01E27400D79FD7 /* Build configuration list for PBXNativeTarget "TodayLastYear" */;
@@ -102,10 +206,12 @@
 				66AE5F822F01E27200D79FD7 /* Sources */,
 				66AE5F832F01E27200D79FD7 /* Frameworks */,
 				66AE5F842F01E27200D79FD7 /* Resources */,
+				6647DCCC2F0571D5009FCAE6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6647DCC62F0571D5009FCAE6 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				66AE5F882F01E27200D79FD7 /* TodayLastYear */,
@@ -173,6 +279,9 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					6647DCB62F0571D4009FCAE6 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					66AE5F852F01E27200D79FD7 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -203,11 +312,19 @@
 				66AE5F852F01E27200D79FD7 /* TodayLastYear */,
 				66AE5F922F01E27400D79FD7 /* TodayLastYearTests */,
 				66AE5F9C2F01E27400D79FD7 /* TodayLastYearUITests */,
+				6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6647DCB52F0571D4009FCAE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66AE5F842F01E27200D79FD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +349,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6647DCB32F0571D4009FCAE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66AE5F822F01E27200D79FD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +380,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6647DCC62F0571D5009FCAE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6647DCB62F0571D4009FCAE6 /* TLYWidgetExtension */;
+			targetProxy = 6647DCC52F0571D5009FCAE6 /* PBXContainerItemProxy */;
+		};
 		66AE5F952F01E27400D79FD7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 66AE5F852F01E27200D79FD7 /* TodayLastYear */;
@@ -269,6 +398,77 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		6647DCCA2F0571D5009FCAE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TLYWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3UU87M9ZBQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TLYWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TLYWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogiato.TodayLastYear.TLYWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		6647DCCB2F0571D5009FCAE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TLYWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3UU87M9ZBQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TLYWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TLYWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fogiato.TodayLastYear.TLYWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = xros;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 		66AE5FA52F01E27400D79FD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -582,6 +782,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6647DCC92F0571D5009FCAE6 /* Build configuration list for PBXNativeTarget "TLYWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6647DCCA2F0571D5009FCAE6 /* Debug */,
+				6647DCCB2F0571D5009FCAE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66AE5F812F01E27200D79FD7 /* Build configuration list for PBXProject "TodayLastYear" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

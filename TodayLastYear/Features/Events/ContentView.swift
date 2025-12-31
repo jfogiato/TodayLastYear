@@ -22,12 +22,14 @@ struct ContentView: View {
                     deniedView
                 }
             }
-            .background(Theme.colors.background.ignoresSafeArea())
             .navigationTitle(calendarManager.oneYearAgoDate.formatted(.dateTime.month(.wide).day().year()))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Theme.colors.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
         }
+        .background(Theme.colors.background)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Theme.colors.background.ignoresSafeArea())
     }
     
     // MARK: - Subviews
