@@ -7,7 +7,7 @@ struct AppColors {
     let burntOrange = Color(red: 0.78, green: 0.42, blue: 0.2)
     let oliveGreen = Color(red: 0.42, green: 0.45, blue: 0.29)
     
-    // Warm neutrals
+    // Warm neutrals (light mode base values)
     let warmWhite = Color(red: 0.98, green: 0.97, blue: 0.95)
     let warmGray = Color(red: 0.55, green: 0.52, blue: 0.48)
     let warmBlack = Color(red: 0.15, green: 0.13, blue: 0.11)
@@ -15,9 +15,23 @@ struct AppColors {
     // Semantic colors
     var primary: Color { burntOrange }
     var secondary: Color { oliveGreen }
-    var background: Color { warmWhite }
-    var textPrimary: Color { warmBlack }
-    var textSecondary: Color { warmGray }
+    
+    // Adaptive colors for dark mode support
+    var background: Color {
+        Color("Background", bundle: nil)
+    }
+    
+    var cardBackground: Color {
+        Color("CardBackground", bundle: nil)
+    }
+    
+    var textPrimary: Color {
+        Color("TextPrimary", bundle: nil)
+    }
+    
+    var textSecondary: Color {
+        Color("TextSecondary", bundle: nil)
+    }
     
     // Calendar accent (used for calendar dots, can be overridden by actual calendar color)
     var calendarAccent: Color { oliveGreen }
@@ -62,13 +76,17 @@ let Theme = AppTheme()
 // MARK: - Reusable Card Style
 
 struct CardModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     func body(content: Content) -> some View {
         content
             .padding(Theme.layout.paddingMedium)
-            .background(Color.white)
+            .background(Theme.colors.cardBackground)
             .cornerRadius(Theme.layout.cornerRadiusMedium)
             .shadow(
-                color: Theme.colors.warmBlack.opacity(0.08),
+                color: colorScheme == .dark
+                    ? Color.black.opacity(0.3)
+                    : Theme.colors.warmBlack.opacity(0.08),
                 radius: Theme.layout.cardShadowRadius,
                 x: 0,
                 y: Theme.layout.cardShadowY
@@ -85,14 +103,18 @@ extension View {
 // MARK: - Subtle Memory/Photo Style
 
 struct MemoryCardModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
+    
     func body(content: Content) -> some View {
         content
             .padding(Theme.layout.paddingMedium)
             .background(
                 RoundedRectangle(cornerRadius: Theme.layout.cornerRadiusMedium)
-                    .fill(Color.white)
+                    .fill(Theme.colors.cardBackground)
                     .shadow(
-                        color: Theme.colors.warmBlack.opacity(0.1),
+                        color: colorScheme == .dark
+                            ? Color.black.opacity(0.3)
+                            : Theme.colors.warmBlack.opacity(0.1),
                         radius: Theme.layout.cardShadowRadius,
                         x: 0,
                         y: Theme.layout.cardShadowY
@@ -100,7 +122,7 @@ struct MemoryCardModifier: ViewModifier {
             )
             .overlay(
                 RoundedRectangle(cornerRadius: Theme.layout.cornerRadiusMedium)
-                    .stroke(Theme.colors.burntOrange.opacity(0.15), lineWidth: 1)
+                    .stroke(Theme.colors.burntOrange.opacity(colorScheme == .dark ? 0.25 : 0.15), lineWidth: 1)
             )
     }
 }

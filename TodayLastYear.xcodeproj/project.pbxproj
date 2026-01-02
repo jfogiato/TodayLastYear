@@ -71,6 +71,7 @@
 		6647DCCE2F057205009FCAE6 /* Exceptions for "TodayLastYear" folder in "TLYWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				Design/Theme.swift,
 				Features/Events/CalendarManager.swift,
 			);

@@ -5,10 +5,20 @@ class CalendarManager: ObservableObject {
     private let eventStore = EKEventStore()
     
     @Published var events: [EKEvent] = []
-    @Published var authorizationStatus: EKAuthorizationStatus = .notDetermined
+    @Published var authorizationStatus: EKAuthorizationStatus
     
     var oneYearAgoDate: Date {
         Calendar.current.date(byAdding: .year, value: -1, to: Date()) ?? Date()
+    }
+    
+    init() {
+        // Check current authorization status immediately on init
+        self.authorizationStatus = EKEventStore.authorizationStatus(for: .event)
+        
+        // If already authorized, fetch events immediately
+        if authorizationStatus == .fullAccess {
+            fetchEventsFromOneYearAgo()
+        }
     }
     
     func requestAccess() async {
