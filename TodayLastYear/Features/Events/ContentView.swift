@@ -47,7 +47,7 @@ struct ContentView: View {
                 }
             }
             WidgetCenter.shared.reloadAllTimelines()
-        }
+        }   
     }
     
     // MARK: - Subviews
